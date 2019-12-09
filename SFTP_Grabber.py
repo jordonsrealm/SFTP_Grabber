@@ -23,7 +23,7 @@ def grab_new_files(list_to_compare):
 
     for newFile in newest_files:
         local_file = open(newFile, 'wb')
-        sftp.get(newFile)
+        sftp.get(newFile, local_file_directory)
         local_file.close()
 
     pysftp.quit()
